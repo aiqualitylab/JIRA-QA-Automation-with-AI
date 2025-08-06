@@ -154,18 +154,6 @@ cd jira-qa-automation
 pip install behave
 ```
 
-## ▶️ Running the Tests
-
-To run all feature tests:
-```bash
-behave
-```
-
-To run a specific feature file:
-```bash
-behave KAN-1.feature
-```
-
 🗂️ Organize your feature files inside a `features/` folder if your project grows.
 
 ## 🧾 About the Feature Files
@@ -337,3 +325,4 @@ git push origin feature/my-new-feature
 For questions or collaboration, connect with us:
 
 🧪 GitHub: [aiqualitylab](https://github.com/aiqualitylab)
+
