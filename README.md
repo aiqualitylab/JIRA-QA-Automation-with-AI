@@ -195,64 +195,6 @@ Feature: Shopping Cart Checkout Process
     And the order should not be processed
 ```
 
-#### 2️⃣ API Integration Story (KAN-2)
-```gherkin
-Feature: External Payment Gateway Integration
-
-  @positive
-  Scenario: Successful API authentication
-    Given the system has valid API credentials
-    When a connection request is made to the payment gateway
-    Then the API should return a valid authentication token
-    And the connection status should be "authenticated"
-
-  @negative
-  Scenario: Handle API timeout
-    Given the payment gateway API is slow to respond
-    When the system waits for more than 30 seconds
-    Then a timeout error should be logged
-    And the user should receive a "Try again" message
-```
-
-#### 3️⃣ User Authentication Story (KAN-3)
-```gherkin
-Feature: Multi-Factor Authentication
-
-  @positive
-  Scenario: Complete 2FA setup
-    Given the user has enabled 2FA
-    When they scan the QR code with their authenticator app
-    And enter the correct verification code
-    Then 2FA should be successfully activated
-    And backup codes should be generated
-
-  @security @negative
-  Scenario: Block brute force attempts
-    Given a user account exists
-    When invalid 2FA codes are entered 5 times
-    Then the account should be temporarily locked
-    And an email notification should be sent
-```
-
-#### 4️⃣ Data Migration Story (KAN-4)
-```gherkin
-Feature: User Data Migration
-
-  @positive
-  Scenario: Successful batch migration
-    Given there are 1000 user records to migrate
-    When the migration process starts
-    Then all user data should be transferred correctly
-    And the migration log should show "Success"
-
-  @edgecase
-  Scenario: Handle incomplete user data
-    Given some user records have missing fields
-    When the migration process encounters incomplete data
-    Then it should apply default values
-    And log the affected records for review
-```
-
 ## 🤝 Contributing
 
 We welcome improvements and new scenarios!
@@ -325,4 +267,5 @@ git push origin feature/my-new-feature
 For questions or collaboration, connect with us:
 
 🧪 GitHub: [aiqualitylab](https://github.com/aiqualitylab)
+
 
